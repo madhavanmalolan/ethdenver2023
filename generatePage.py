@@ -14,6 +14,7 @@ fout = open("ethdenver2023schedule.md", "w");
 fout.write("""
 # Eth Denver 2023 Schedule
 | Event Name | Description | Venue | Time | Date | Add to Calendar |
+| ---------- | ----------- | ------ | ----| ----- | ---------------|
 """)
 
 for session in sessions:

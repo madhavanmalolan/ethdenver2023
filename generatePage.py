@@ -21,7 +21,7 @@ for session in sessions:
   if len(session["instances"]) == 0:
     continue
   instance = session["instances"][0]
-  event = {"name":session["name"], "description":session["description"], "room":rooms[instance["room_id"]], "start_time": instance["time"], "end_time": instance["end_time"], "tz": instance["time_zone_offset"], "date": instance["date"]}
+  event = {"name":session["name"], "description":session["description"].replace("\n"," "), "room":rooms[instance["room_id"]], "start_time": instance["time"], "end_time": instance["end_time"], "tz": instance["time_zone_offset"], "date": instance["date"]}
   google_url = "https://www.google.com/calendar/render?action=TEMPLATE&text="+event["name"]+"&dates="+event["date"].replace("-","")+"T"+event["start_time"].replace(":","")+"00Z"+event["tz"]+"/"+event["date"].replace("-","")+"T"+event["end_time"].replace(":","")+"00Z"+event["tz"]
   event["google_url"] = google_url
   events.append(event)

@@ -29,5 +29,5 @@ for session in sessions:
 events.sort(key=lambda e : e["date"]+"T"+e["start_time"])
 
 for event in events:
-  fout.write("|"+event["name"]+"|"+event["description"]+"|"+event["room"]+"|"+event["start_time"]+"|"+event["date"]+"|[Add to Cal](\""+event["google_url"].replace(" ","%20")+"\")|\n")
+  fout.write("|"+event["name"]+"|"+event["description"]+"|"+event["room"]+"|"+event["start_time"]+"|"+event["date"]+"|[Add to Cal]("+event["google_url"].replace(" ","%20")+")|\n")
 
